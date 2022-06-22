@@ -66,7 +66,7 @@ new Vue({
         },
         // Método que muestra la alerta indicando que el jugador ha perdido; después
         // de mostrarla, se reinicia el juego
-        indicarFracaso() //aquí falta un "{"
+        indicarFracaso(){ 
             Swal.fire({
                     title: "Perdiste",
                     html: `
@@ -85,7 +85,7 @@ new Vue({
                     html: `
                 <img class="img-fluid" src="./img/ganaste.png" alt="Ganaste">
                 <p class="h4">Muy bien hecho</p>`,
-                    confirmButtonText: "Jugar de nuevo" //poner una ","
+                    confirmButtonText: "Jugar de nuevo", 
                     allowOutsideClick: false,
                     allowEscapeKey: false,
                 })
@@ -102,7 +102,7 @@ new Vue({
                 j = Math.floor(Math.random() * (i + 1));
                 x = a[i];
                 a[i] = a[j];
-                a[j] = x //poner un ;
+                a[j] = x; 
             }
             return a;
         },
@@ -132,8 +132,8 @@ new Vue({
             }
             // Si es el que estaba mostrada, lo ocultamos de nuevo
             let imagenSeleccionada = this.memorama[indiceFila][indiceImagen];
-            let ultimaImagenSeleccionada = this.memorama[this.ultimasCoordenadas.indiceFila][this.ultimaAsCoordenadas.indiceImagen]; //hay una "A" de mas
-            if (indiceFila == this.ultimasCoordenadas.indiceFila && //falta un =
+            let ultimaImagenSeleccionada = this.memorama[this.ultimasCoordenadas.indiceFila][this.ultimasCoordenadas.indiceImagen]; 
+            if (indiceFila === this.ultimasCoordenadas.indiceFila && 
                 indiceImagen === this.ultimasCoordenadas.indiceImagen) {
                 this.memorama[indiceFila][indiceImagen].mostrar = false;
                 this.ultimasCoordenadas.indiceFila = null;
